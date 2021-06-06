@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<title>D3 Final Project</title>
+</head>
+<body>
+	<style>
+		.d3-tip {
+			line-height: 1;
+			padding: 6px;
+			background: rgba(0, 0, 0, 0.8);
+			color: #fff;
+			border-radius: 4px;
+			font-size: 16px;
+		}
+		.selected{
+			fill: red;
+			stroke: brown;
+		}
+		.highlight{
+			stroke: black;
+			stroke-width: 1px;
+		}
+		.new_distribute{
+			fill: pink;
+		}
+		.inner_bar{
+			fill: pink;
+		}
+	</style>
+
+
+	<svg width="2000" height="2000">
+		<g id = "scatterplot">
+			<g id = "scatterXAxis"></g>
+			<g id = "scatterYAxis"></g>
+			<g id = "brushscatter"></g>
+		</g>
+
+		<g id = "leftbarchart">
+			<g id = "leftbarXAxis"></g>
+            <g id = "leftbarYAxis"></g>
+
+        </g>
+
+        <g id = "rightbarchart">
+			<g id = "rightbarXAxis"></g>
+            <g id = "rightbarYAxis"></g>
+        </g>
+		
+		<g id = "piechart">
+			<g id = "piearea"></g>
+		</g>
+
+		
+	</svg>
+
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="d3-tip.js"></script>
+	<script src="DV Final Project.js"></script>
+</body>
+</html>
+
