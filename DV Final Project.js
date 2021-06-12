@@ -442,6 +442,8 @@ d3.csv("billionaires.csv").then(rawData =>{
 		{label : "others", startAngle : pieradiusmarried, endAngle : 2* Math.PI, pieradius : radiusothers}
 	];
 
+	var color = d3.scaleOrdinal(['#ff7f0e','#1f77b4']);
+
 	console.log("piechartData",piechartData);
 	//move the position
 	var piechart = d3.select("#piechart");
@@ -461,7 +463,9 @@ d3.csv("billionaires.csv").then(rawData =>{
         						 .append("path")
 								 .attr("d", pieGenerator)
 								 .attr("transform", `translate(${piechartWidth/2}, ${piechartHeight/2})`)
-        						 .attr("fill", "orange")
+        						 .attr("fill", function(d,i){
+									 return color(i)
+								 })
 								 .attr("stroke", "white")
 	
 	var piestext = piechart.selectAll("text")
@@ -756,7 +760,9 @@ d3.csv("billionaires.csv").then(rawData =>{
         				   .append("path")
 						   .attr("d", new_pieGenerator)
 						   .attr("transform", `translate(${piechartWidth/2}, ${piechartHeight/2})`)
-        				   .attr("fill", "orange")
+        				   .attr("fill", function(d,i){
+							   return color(i)
+						   })
 						   .attr("stroke", "white")
 	
 		var new_piestext = pies.exit().remove()
